@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SafeArea(
         // 4
         child: ListView.builder(itemCount: Recipe.samples.length, itemBuilder: (BuildContext context, int index) {
-          return buildRecipeCard(Recipe.samples[index]);
+          return buildCardGesture(Recipe.samples[index]);
 
         },),
       ), );
@@ -80,6 +80,18 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       )
+    );
+  }
+
+  Widget buildCardGesture(Recipe recipe) {
+    return GestureDetector(onTap: () {
+      Navigator.push(context,
+    MaterialPageRoute(
+        builder: (context) {
+      return Text("Details Screen");
+    })
+    );},
+      child: buildRecipeCard(recipe),
     );
   }
 }
