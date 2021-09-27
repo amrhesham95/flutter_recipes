@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'recipe.dart';
-
+import 'recipe_details.dart';
 void main() {
   runApp(RecipeApp());
 }
@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
       Navigator.push(context,
     MaterialPageRoute(
         builder: (context) {
-      return Text("Details Screen");
+      return RecipeDetail(recipe: recipe);
     })
     );},
       child: buildRecipeCard(recipe),
